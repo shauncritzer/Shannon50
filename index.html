@@ -107,24 +107,25 @@
     filter: saturate(0.95) contrast(1.02);
   }
 
-  /* ---- Hero collage (cover) ---- */
+  /* ---- Hero collage (cover) — symmetric 2x2 grid ---- */
   .cover-collage {
-    position: relative;
-    width: 560px;
-    height: 540px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 460px;
     margin: 0 auto 3rem;
     opacity: 0;
     animation: fadeUp 1.4s 0.2s forwards;
   }
 
   .collage-photo {
-    position: absolute;
+    position: relative;
+    aspect-ratio: 1 / 1;
     padding: 0.6rem;
     background: var(--ivory);
     box-shadow:
       0 1px 2px rgba(45, 36, 25, 0.05),
-      0 14px 42px rgba(45, 36, 25, 0.18);
-    transition: transform 0.6s ease;
+      0 10px 30px rgba(45, 36, 25, 0.12);
   }
 
   .collage-photo::before {
@@ -141,47 +142,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: saturate(0.95) contrast(1.02);
-  }
-
-  /* Hero: tux & dress B&W — left side, dominant, portrait */
-  .collage-main {
-    width: 240px;
-    height: 320px;
-    left: 4%;
-    top: 50%;
-    transform: translateY(-48%) rotate(-2deg);
-    z-index: 4;
-  }
-
-  /* Accent 1: B&W kiss — top-right, portrait */
-  .collage-photo-1 {
-    width: 175px;
-    height: 215px;
-    right: 4%;
-    top: 0;
-    transform: rotate(3deg);
-    z-index: 3;
-  }
-
-  /* Accent 2: outdoor color — center-right, fills gap */
-  .collage-photo-2 {
-    width: 200px;
-    height: 160px;
-    right: 14%;
-    top: 38%;
-    transform: rotate(-3deg);
-    z-index: 2;
-  }
-
-  /* Accent 3: sunset color — bottom-right, landscape */
-  .collage-photo-3 {
-    width: 200px;
-    height: 160px;
-    right: 2%;
-    bottom: 0;
-    transform: rotate(2deg);
-    z-index: 1;
+    filter: saturate(0.97) contrast(1.04);
   }
 
   .cover-ornament {
@@ -393,15 +354,18 @@
 
   .interlude-photo .entry-frame {
     margin: 0 auto;
-    max-width: 600px;
+    max-width: 560px;
     aspect-ratio: 16 / 10;
     overflow: hidden;
+    position: relative;
   }
 
   .interlude-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: saturate(1) contrast(1.05);
+    image-rendering: -webkit-optimize-contrast;
   }
 
   /* ============ ENTRY CARDS ============ */
@@ -778,25 +742,9 @@
     .fifty-section { padding: 5rem 1.5rem; }
     .cover-photo { width: 220px; height: 300px; }
     .cover-collage {
-      width: 340px;
-      height: 420px;
+      width: 320px;
+      gap: 0.7rem;
       margin-bottom: 2rem;
-    }
-    .collage-main {
-      width: 170px;
-      height: 220px;
-    }
-    .collage-photo-1 {
-      width: 120px;
-      height: 145px;
-    }
-    .collage-photo-2 {
-      width: 145px;
-      height: 115px;
-    }
-    .collage-photo-3 {
-      width: 130px;
-      height: 105px;
     }
     .entry-message p:first-of-type:first-letter {
       font-size: 3em;
@@ -817,17 +765,17 @@
 <!-- ===== COVER ===== -->
 <section class="cover">
   <div class="cover-collage">
-    <div class="collage-photo collage-photo-1">
+    <div class="collage-photo">
+      <img src="shaun-shannon-tux-bw.jpg" alt="Shaun and Shannon">
+    </div>
+    <div class="collage-photo">
       <img src="shaun-shannon-bw-kiss.jpg" alt="Shaun and Shannon">
     </div>
-    <div class="collage-photo collage-photo-2">
+    <div class="collage-photo">
       <img src="shaun-shannon-outdoor.jpg" alt="Shaun and Shannon">
     </div>
-    <div class="collage-photo collage-photo-3">
+    <div class="collage-photo">
       <img src="shaun-shannon-sunset.jpg" alt="Shaun and Shannon">
-    </div>
-    <div class="collage-photo collage-main">
-      <img src="shaun-shannon-tux-bw.jpg" alt="Shaun and Shannon">
     </div>
   </div>
   <div class="cover-eyebrow">A Birthday Letter</div>
@@ -1372,7 +1320,7 @@
       <div class="fifty-item"><div class="fifty-num">29</div><div class="fifty-text">Our Excellence resort getaways.</div></div>
       <div class="fifty-item"><div class="fifty-num">30</div><div class="fifty-text">The fact you are as gangsta as me.</div></div>
       <div class="fifty-item"><div class="fifty-num">31</div><div class="fifty-text">You knew all my favorite rap lyrics.</div></div>
-      <div class="fifty-item"><div class="fifty-num">32</div><div class="fifty-text">You don't fart. Or so you say.</div></div>
+      <div class="fifty-item"><div class="fifty-num">32</div><div class="fifty-text">You don't fart.</div></div>
       <div class="fifty-item"><div class="fifty-num">33</div><div class="fifty-text">You've been open and willing to let our relationship grow and blossom.</div></div>
       <div class="fifty-item"><div class="fifty-num">34</div><div class="fifty-text">Your desire to be, do, and get better.</div></div>
       <div class="fifty-item"><div class="fifty-num">35</div><div class="fifty-text">You are my twin in all the ways that matter.</div></div>
