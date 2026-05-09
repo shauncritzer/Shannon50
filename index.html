@@ -144,32 +144,32 @@
     filter: saturate(0.95) contrast(1.02);
   }
 
-  /* Anchor: solo Shannon — center, slightly left, dominant */
+  /* Anchor: outdoor shot — center, dominant, square format */
   .collage-main {
-    width: 240px;
-    height: 320px;
+    width: 280px;
+    height: 280px;
     left: 50%;
     top: 50%;
-    transform: translate(-58%, -50%) rotate(-2deg);
+    transform: translate(-55%, -50%) rotate(-2deg);
     z-index: 3;
   }
 
-  /* Couple shot 1: top-right, slight tilt */
+  /* Accent 1: B&W kiss — top-right, portrait, slight tilt */
   .collage-photo-1 {
-    width: 180px;
-    height: 220px;
-    right: 0;
-    top: 10%;
+    width: 160px;
+    height: 200px;
+    right: 2%;
+    top: 4%;
     transform: rotate(4deg);
     z-index: 2;
   }
 
-  /* Couple shot 2: bottom-right, deeper tilt */
+  /* Accent 2: solo Shannon — bottom-right, portrait, deeper tilt */
   .collage-photo-2 {
-    width: 200px;
-    height: 160px;
-    right: 4%;
-    bottom: 4%;
+    width: 150px;
+    height: 190px;
+    right: 6%;
+    bottom: 2%;
     transform: rotate(-3deg);
     z-index: 1;
   }
@@ -453,6 +453,15 @@
     margin-top: -2rem;
     position: relative;
     z-index: 2;
+  }
+
+  /* For wide/landscape photos that need full visibility (no crop) */
+  .entry-photo-contain {
+    aspect-ratio: 4 / 3;
+  }
+  .entry-photo-contain img {
+    object-fit: contain;
+    background: var(--ivory-deep);
   }
 
   .entry-frame {
@@ -764,16 +773,16 @@
       margin-bottom: 2rem;
     }
     .collage-main {
-      width: 180px;
-      height: 240px;
+      width: 200px;
+      height: 200px;
     }
     .collage-photo-1 {
-      width: 130px;
-      height: 160px;
+      width: 115px;
+      height: 145px;
     }
     .collage-photo-2 {
-      width: 145px;
-      height: 115px;
+      width: 110px;
+      height: 140px;
     }
     .entry-message p:first-of-type:first-letter {
       font-size: 3em;
@@ -798,10 +807,10 @@
       <img src="shaun-shannon-bw-kiss.jpg" alt="Shaun and Shannon">
     </div>
     <div class="collage-photo collage-photo-2">
-      <img src="shaun-shannon-outdoor.jpg" alt="Shaun and Shannon">
+      <img src="shannon-cover.jpg" alt="Shannon">
     </div>
     <div class="collage-photo collage-main">
-      <img src="shannon-cover.jpg" alt="Shannon">
+      <img src="shaun-shannon-outdoor.jpg" alt="Shaun and Shannon">
     </div>
   </div>
   <div class="cover-eyebrow">A Birthday Letter</div>
@@ -846,11 +855,11 @@
       <!-- Mary Ann (Mom) -->
       <div class="entry reveal">
         <div class="entry-photos-stack">
-          <div class="entry-photo entry-frame">
+          <div class="entry-photo entry-frame entry-photo-contain">
             <img src="shannon-family-vintage.jpg" alt="Shannon as a baby with her parents and sister">
           </div>
-          <div class="entry-photo entry-frame entry-photo-small">
-            <img src="shannon-mom-cake.webp" alt="Shannon and Mary Ann">
+          <div class="entry-photo entry-frame">
+            <img src="shannon-mom-cake.jpg" alt="Shannon and Mary Ann">
           </div>
         </div>
         <div class="entry-text">
@@ -1049,7 +1058,7 @@
           <div class="entry-photo entry-frame">
             <img src="shannon-chase.jpg" alt="Shannon and Chase">
           </div>
-          <div class="entry-photo entry-frame entry-photo-small">
+          <div class="entry-photo entry-frame">
             <img src="shannon-casey.jpg" alt="Shannon and Casey">
           </div>
         </div>
